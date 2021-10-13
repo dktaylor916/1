@@ -11,6 +11,7 @@
   text-align: center;
 }
 
+
 /* Clear floats after the columns */
 
     </style>
@@ -35,16 +36,19 @@
    
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script>
-    var width = window.outerWidth, height = window.outerHeight, sizeDivisor = 1, nodePadding = 1;
+    var width = window.innerWidth + 300, height = window.innerHeight, sizeDivisor = 1, nodePadding = 1;
 
     var svg = d3.select("body")
+      
         .append("svg")
-        .attr('viewBox','-550 30 1800 1800')
-        .attr('z-index',100)
+        .attr('viewBox',`0 0 ${width} ${height}`)
+        .attr('preserveAspectRatio',"xMidYMid meet")
+        
+  
         
         var defs = svg.append("defs");
 
-svg.append('text').attr('x',900).attr('y',650).text('Sources: Eviction Lab, Forbes')
+svg.append('text').attr('x',0).attr('y',height - 10).text('Sources: Eviction Lab, Forbes')
 
 defs.append('pattern')
   .attr("id", "dog")
